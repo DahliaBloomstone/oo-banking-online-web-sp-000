@@ -14,7 +14,7 @@ def valid? #both accounts are valid, calls on sender and receiver #valid? method
 @sender.valid? && receiver.valid? ? true : false
 end
 
-def execute_transaction
+def execute_transaction #can execute a successful transaction between two accounts, and can only happen once
    if @sender.balance > @amount && @status == "pending"
      @sender.balance -= @amount
      @receiver.balance += @amount
