@@ -11,10 +11,11 @@ class Transfer
 end
 
 def valid? #both accounts are valid, calls on sender and receiver #valid? methods
-@sender.valid? && receiver.valid? ? true : false 
+@sender.valid? && receiver.valid? ? true : false
 end
 
-def execute_transaction
+def execute_transaction #can: execute transaction between two accounts, transfer happens only once, rejects if sender doesn't have the funds 
+
 end
 
 def reverse_transfer
