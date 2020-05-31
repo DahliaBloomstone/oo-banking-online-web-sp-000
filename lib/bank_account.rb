@@ -14,8 +14,8 @@ def deposit(amount) #can deposit money into account
 end
 
 def display_balance # can display its balance
-  "Your Balance is $#{@balance}."
-end 
+  "Your balance is $#{@balance}."
+end
 
 def valid? #is valid (t/f &&) with an open status and a balance > 0
   if @status == "open" && @balance > 0
