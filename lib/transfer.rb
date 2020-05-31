@@ -24,6 +24,7 @@ def execute_transaction
       "Transaction rejected. Please check your account balance."
     end
   end
+  
 def reverse_transfer #can reverse a transfer between accounts, can only reverse executed transfers
 if @status == "complete"
    @sender.balance += @amount
