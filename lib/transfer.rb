@@ -26,7 +26,7 @@ def execute_transaction #can execute a successful transaction between two accoun
  end
 
 def reverse_transfer #can reverse a transfer between accounts, can only reverse executed transfers
-if @status = "complete"
+if @status == "complete"
    @sender.balance += @amount
    @receiver.balance -= @amount
    @status = "reversed"
