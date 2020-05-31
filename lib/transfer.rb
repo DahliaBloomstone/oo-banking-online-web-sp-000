@@ -16,9 +16,9 @@ end
 
 def execute_transaction #can: execute transaction between two accounts, transfer happens only once, rejects if sender doesn't have the funds
 if @sender.balance > @amount && @status == "pending"
-  @sender.balance -= @amount
-  @receiver.balance += @amount
-  @status = "complete"
+   @sender.balance -= @amount
+   @receiver.balance += @amount
+   @status = "complete"
 else
   @status = "rejected"
   return "Transaction rejected. Please check your account balance."
@@ -27,15 +27,10 @@ end
 
 def reverse_transfer #can reverse a transfer between accounts, can only reverse executed transfers
 if @status == "complete"
-  @sender.balance += @amount
-  @receiver.balance -= @amount
-  @status = "reversed"
+   @sender.balance += @amount
+   @receiver.balance -= @amount
+   @status = "reversed"
 end
 end
-
-end
-
-
-
 
 end
