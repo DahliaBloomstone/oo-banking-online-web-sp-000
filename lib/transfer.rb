@@ -20,7 +20,6 @@ def execute_transaction #can execute a successful transaction between two accoun
       @receiver.balance += @amount
       @status = "complete"
    else
-     @sender.valid? && receiver.valid? ? true : false
      @status = "rejected" #rejects transfer if sender does not have enough funds
      return "Transaction rejected. Please check your account balance."
    end
