@@ -7,3 +7,5 @@ def initialize(name)
   @status = "open"
 
 end
+
+end
