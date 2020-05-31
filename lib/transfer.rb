@@ -15,16 +15,16 @@ def valid? #both accounts are valid, calls on sender and receiver #valid? method
 end
 
 def execute_transaction
-    if valid? && sender.balance > amount && self.status == "pending"
-      sender.withdrawal(self.amount)
-      receiver.deposit(self.amount)
-      self.status = "complete"
-    else
-      self.status = "rejected"
-      "Transaction rejected. Please check your account balance."
-    end
-  end
-  
+   if @sender.balance > @amount && @status == "pending"
+     @sender.balance -= @amount
+     @receiver.balance += @amount
+     @status = "complete"
+   else
+     @status = "rejected"
+     return "Transaction rejected. Please check your account balance."
+   end
+ end
+
 def reverse_transfer #can reverse a transfer between accounts, can only reverse executed transfers
 if @status == "complete"
    @sender.balance += @amount
