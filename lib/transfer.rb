@@ -10,8 +10,8 @@ class Transfer
     @amount = amount
 end
 
-def valid? #both accounts are valid, calls on sender and receiver #valid? methods 
-
+def valid? #both accounts are valid, calls on sender and receiver #valid? methods
+@sender.valid? && receiver.valid? ? true : false 
 end
 
 def execute_transaction
