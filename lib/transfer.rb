@@ -2,7 +2,7 @@
 class Transfer
   attr_accessor :sender, :receiver, :amount, :status, :count
 
-#can initialize: Transfer, sender, receiver, status of pending, and transfer amoutn
+#can initialize: Transfer, sender, receiver, status of pending, and transfer amount
   def initialize(sender, receiver, amount)
     @sender = sender
     @receiver = receiver
