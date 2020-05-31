@@ -16,12 +16,16 @@ end
 def display_balance # can display its balance
   "Your Balance is $#{@balance}."
 
-def valid? #is valid with an open status and a balance > 0
+def valid? #is valid (t/f &&) with an open status and a balance > 0
   if @status == "open" && @balance > 0
     true
   else
     false
   end
+end
+
+def close_account #able to close the account
+  @status = "closed"
 end 
 
 end
