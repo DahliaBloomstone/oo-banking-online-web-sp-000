@@ -15,11 +15,10 @@ def valid? #both accounts are valid, calls on sender and receiver #valid? method
 end
 
 def execute_transaction #can execute a successful transaction between two accounts, and can only happen once
-   if @sender.balance > @amount && @status == "pending"
+   if @sender.balance > @amount && @status == "pending" && valid?
       @sender.balance -= @amount
       @receiver.balance += @amount
       @status = "complete"
-      if @sender.balance > @amount && @status == "pending" && valid?
    else
      @status = "rejected" #rejects transfer if sender does not have enough funds
      return "Transaction rejected. Please check your account balance."
